@@ -48,11 +48,11 @@
 <ng-template #stepInfo let-query="query$">
   <ng-container *ngIf="query | async as q">
     <p i18n>
-      The poll is divided in {{ q.MinNbRounds }}
-      <ng-container *ngIf="q.MinNbRounds != q.MaxNbRounds"> to {{ q.MaxNbRounds }}</ng-container>
+      The poll will have between {{ q.MinNbRounds }}
+      <ng-container *ngIf="q.MinNbRounds != q.MaxNbRounds"> and {{ q.MaxNbRounds }}</ng-container>
       rounds.
-      At each round, the par&shy;tic&shy;i&shy;pants will have to choose one of the al&shy;ter&shy;na&shy;tives.
-      A round ends when all the par&shy;tic&shy;i&shy;pants have voted, or after {{ q.MaxRoundDuration | duration }}.
+      In each round, the participants will either abstain from the vote or choose which alternative to support. 
+      A round ends either when all the participants have voted or after {{ q.MaxRoundDuration | duration }}.
       Par&shy;tic&shy;i&shy;pants that did not vote during a round
       <ng-container [ngSwitch]="q.ReportVote">
         <ng-container *ngSwitchCase="true">
